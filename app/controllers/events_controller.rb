@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
 
+  def index
+    @events = Event.all
+  end
+
   def new
     @event = Event.new
   end
@@ -15,7 +19,8 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:name)
+    params.require(:event).permit(:name, :short_description, :complete_description,
+    :begin_date, :end_date)
   end
 
 end
