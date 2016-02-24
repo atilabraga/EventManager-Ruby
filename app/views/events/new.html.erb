@@ -2,15 +2,26 @@
   <div class="field">
     <%= f.label "Nome" %></br>
     <%= f.text_field :name %>
-  </div>
+  </div></p>
   <div class="field">
     <%= f.label "Descrição curta" %></br>
     <%= f.text_area :short_description, rows: 2 %>
-  </div>
+  </div></p>
   <div class="field">
     <%= f.label "Descrição completa" %></br>
-    <%= f.text_area :complete_description, rows: 8 %>
+    <%= f.text_area :complete_description, rows: 5 %>
+  </div></p>
+  <div>
+    <div class="field">
+      <%= f.label "Data de inicio" %></br>
+      <%= f.datetime_select :begin_date, :ampm => true, :minute_step => 15 %>
+    </div></p>
+    <div class="field">
+      <%= f.label "Data de termino" %></br>
+      <%= f.datetime_select :end_date, :ampm => true, :minute_step => 15 %>
+    </div>
   </div>
+  </br>
   <div class="actions">
     <%= f.submit "Criar" %>
   </div>
