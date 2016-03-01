@@ -54,9 +54,20 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  # events
+  root 'events#index'
   get 'events' => 'events#index'
   get 'events/new' => 'events#new'
   post 'events' => 'events#create'
-  get 'events/:id(.:format)' => 'events#show'
-  root 'events#index'
+  get 'events/:id' => 'events#show', as: :show_event
+  get 'events/:id/edit' => 'events#edit'
+  put 'events/:id' => 'events#update'
+
+  #places
+  get 'places' => 'places#index'
+  get 'places/new' => 'places#new'
+  post 'places' => 'places#create'
+  get 'places/:id' => 'places#show'
+  get 'places/:id/edit' => 'places#edit'
+  put 'places/:id' => 'places#update'
 end
